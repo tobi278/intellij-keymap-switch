@@ -1,0 +1,29 @@
+buildscript {
+    ext.kotlin_version = '1.3.11'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id 'org.jetbrains.intellij' version '0.3.12'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.60'
+}
+
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'kotlin'
+
+intellij {
+    version 'LATEST-TRUNK-SNAPSHOT'
+    pluginName 'Example'
+}
+
+group 'it.karger'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
