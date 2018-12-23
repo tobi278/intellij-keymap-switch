@@ -1,12 +1,9 @@
 <idea-plugin>
     <id>it.karger.keymap-switch</id>
-    <name>Plugin display name here</name>
-    <vendor email="info@karger.it" url="http://www.yourcompany.com">YourCompany</vendor>
+    <name>Keymap Switch</name>
+    <vendor>Tobias Karger</vendor>
 
-    <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
-    ]]></description>
+    <description>Simplifies switching between keymaps</description>
 
     <depends>com.intellij.modules.lang</depends>
 
@@ -17,8 +14,9 @@
     <actions>
         <group id="MyPlugin.SampleMenu" text="Keymaps" description="Pick a shortcut keymap">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="Myplugin.Textboxes" class="ShowKeymapSelectionAction" text="Set keymap..." description="Calls Keymap selection dialog">
-                <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl q" />
+            <action id="Myplugin.Textboxes" class="ShowKeymapSelectionAction" text="Set keymap..."
+                    description="Calls Keymap selection dialog">
+                <keyboard-shortcut keymap="$default" first-keystroke="shift alt e"/>
             </action>
         </group>
     </actions>
