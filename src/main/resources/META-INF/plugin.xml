@@ -12,10 +12,15 @@
     </extensions>
 
     <actions>
-        <group id="MyPlugin.SampleMenu" text="Keymaps" description="Pick a shortcut keymap">
+        <group id="KeyMapSwitch.KeymapMenu" text="Keymaps" description="Switch between shortcut keymaps">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="Myplugin.Textboxes" class="ShowKeymapSelectionAction" text="Set keymap..."
-                    description="Calls Keymap selection dialog">
+
+            <action id="KeyMapSwitch.QuickSwitchKeymap" class="QuickSwitchKeymapAction" text="Switch to recent Keymap"
+                    description="quick-switch between your recent and your current keymap">
+            </action>
+
+            <action id="KeyMapSwitch.KeyMapAction" class="ShowKeymapSelectionAction" text="Set keymap..."
+                    description="Shows a Keymap selection dialog">
                 <keyboard-shortcut keymap="$default" first-keystroke="shift alt e"/>
             </action>
         </group>
