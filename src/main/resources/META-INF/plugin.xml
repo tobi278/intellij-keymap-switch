@@ -3,13 +3,13 @@
     <name>Keymap Switch</name>
     <vendor>Tobias Karger</vendor>
 
-    <description>Simplifies switching between keymaps</description>
+    <description>
+        Switch between keymaps without accessing the settings menu.
+        Just press Shift+Alt+E to open the QuickChangeKeymap dialog.
+        Press Alt+E to toggle between your recent and your current keymap.
+    </description>
 
     <depends>com.intellij.modules.lang</depends>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
-    </extensions>
 
     <actions>
         <group id="KeyMapSwitch.KeymapMenu" text="Keymaps" description="Switch between shortcut keymaps">
@@ -17,11 +17,12 @@
 
             <action id="KeyMapSwitch.QuickSwitchKeymap" class="QuickSwitchKeymapAction" text="Switch to recent Keymap"
                     description="quick-switch between your recent and your current keymap">
+                <keyboard-shortcut keymap="$default" first-keystroke="shift alt e"/>
             </action>
 
             <action id="KeyMapSwitch.KeyMapAction" class="ShowKeymapSelectionAction" text="Set keymap..."
                     description="Shows a Keymap selection dialog">
-                <keyboard-shortcut keymap="$default" first-keystroke="shift alt e"/>
+                <keyboard-shortcut keymap="$default" first-keystroke="shift e"/>
             </action>
         </group>
     </actions>
