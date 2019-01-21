@@ -2,6 +2,7 @@
     <id>it.karger.keymap-switch</id>
     <name>Keymap Switch</name>
     <vendor>Tobias Karger</vendor>
+    <idea-version since-build="183"/>
 
     <description>
         Switch between keymaps without accessing the settings menu.
