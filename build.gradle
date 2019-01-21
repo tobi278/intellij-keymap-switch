@@ -18,7 +18,7 @@ apply plugin: 'kotlin'
 
 intellij {
     version 'LATEST-TRUNK-SNAPSHOT'
-    pluginName 'Example'
+    pluginName 'keymap-switch'
 }
 
 group 'it.karger'
