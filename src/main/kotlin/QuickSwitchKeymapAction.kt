@@ -1,15 +1,9 @@
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.actionSystem.DataKeys
+import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.keymap.KeymapManager
 import com.intellij.openapi.keymap.ex.KeymapManagerEx
-import com.intellij.openapi.ui.MessageType
-import com.intellij.openapi.ui.popup.Balloon
-import com.intellij.openapi.ui.popup.JBPopupFactory
-import com.intellij.openapi.wm.WindowManager
-import com.intellij.ui.awt.RelativePoint
-
 
 class QuickSwitchKeymapAction : AnAction() {
 
@@ -23,17 +17,14 @@ class QuickSwitchKeymapAction : AnAction() {
             PropertiesComponent.getInstance().setValue(Constants.RECENT_KEYMAP_KEY, keymapManager.activeKeymap.name)
 
             val keymap = keymapManager.getKeymap(recentKeymap)
-            keymapManager.activeKeymap = keymap
+            keymap?.let {
+                keymapManager.activeKeymap = it
 
-            val statusBar = WindowManager.getInstance()
-                    .getStatusBar(DataKeys.PROJECT.getData(event.getDataContext()))
-
-            JBPopupFactory.getInstance()
-                    .createHtmlTextBalloonBuilder("Switched Keymap to: " + recentKeymap, MessageType.INFO, null)
-                    .setFadeoutTime(1500)
-                    .createBalloon()
-                    .show(RelativePoint.getCenterOf(statusBar.component),
-                            Balloon.Position.atRight)
+                val currentProject = CommonDataKeys.PROJECT.getData(event.dataContext)
+                currentProject?.let { project ->
+                    Notifier.notify(project, recentKeymap)
+                }
+            }
         }
     }
 }

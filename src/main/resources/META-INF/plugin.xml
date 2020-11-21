@@ -16,12 +16,12 @@
         <group id="KeyMapSwitch.KeymapMenu" text="Keymaps" description="Switch between shortcut keymaps">
             <add-to-group group-id="MainMenu" anchor="last"/>
 
-            <action id="KeyMapSwitch.QuickSwitchKeymap" class="QuickSwitchKeymapAction" text="Switch to recent Keymap"
-                    description="quick-switch between your recent and your current keymap">
+            <action id="KeyMapSwitch.QuickSwitchKeymap" class="QuickSwitchKeymapAction" text="Switch to Recent Keymap"
+                    description="Quick-switch between your recent and your current keymap">
                 <keyboard-shortcut keymap="$default" first-keystroke="alt shift e"/>
             </action>
 
-            <action id="KeyMapSwitch.KeyMapAction" class="ShowKeymapSelectionAction" text="Set keymap..."
+            <action id="KeyMapSwitch.KeyMapAction" class="ShowKeymapSelectionAction" text="Set Keymap..."
                     description="Shows a Keymap selection dialog">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift e"/>
             </action>
